@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Attendance Tracker{% endblock %}</title>
+    <style>
+        .body {
+            padding: 100px;
+            margin: 0;
+            background-color: #f3f3f3;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+        <form method="post">
+            <label for="pass_code">pass_code</label>
+            <br>
+            <input type="text" 
+                name="pass_code"
+                placeholder="Pass Code..."
+                value="{{ request.form['pass_code'] }}">
+            </input>
+            <br>
+    
+            <label for="name">Please enter your name for attendance</label>
+            <br>
+            <input type="name"
+                placeholder="Name..."
+                value="{{ request.form['name'] }}">
+            </input>
+            <br>
+            
+            <button type="submit">Submit</button>
+            <button type="submit">See attendance</button>
+        </form>
+    {% endblock %}
+</body>
+</html>
